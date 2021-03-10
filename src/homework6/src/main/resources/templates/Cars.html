@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="car : ${cars}">
+    [[${car.id}]] -
+    [[${car.name}]] -
+    <a th:href="@{'/cars/' + ${car.id}}">details</a>
+</div>
+</body>
+</html>
