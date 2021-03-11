@@ -17,7 +17,7 @@ public class Cinema {
         this.close = close;
     }
 
-    public void addSeances(String day, Seance... seances) { //додає набір сеансів на конкретний день
+    public void addSeances(String day, Seance... seances) {
         Days thisDay = null;
         for (Days days : Days.values()) {
             if (days.toString().equals(day))
@@ -29,7 +29,7 @@ public class Cinema {
                 rozklad.get(thisDay).addSeance(seance);
     }
 
-    public void addSeance(Seance seance, String day) { //додає один сеанс в конкретний день
+    public void addSeance(Seance seance, String day) {
         Days thisDay = null;
         for (Days days : Days.values()) {
             if (days.toString().equals(day))
@@ -40,7 +40,7 @@ public class Cinema {
             rozklad.get(thisDay).addSeance(seance);
     }
 
-    public void removeMovie(String title) { //повністю видаляє усі сеанси вказаного фільму з розкладу
+    public void removeMovie(String title) {
         for (Map.Entry<Days, Scedule> entry : rozklad.entrySet()) {
             Iterator<Seance> iter = entry.getValue().getSeanceSet().iterator();
             while (iter.hasNext()) {
@@ -51,7 +51,7 @@ public class Cinema {
         }
     }
 
-    public void removeSeance(Seance seance, String day) { //видаляє конкретний сеанс фільму в конкретний день
+    public void removeSeance(Seance seance, String day) {
         for (Days day1 : Days.values()) {
             if (day1.toString().equals(day)) {
                 rozklad.get(day1).removeSeance(seance);
